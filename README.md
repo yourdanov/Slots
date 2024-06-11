@@ -1,7 +1,7 @@
 # Slots Machine Game v1.00
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/yourdanov/Slots/blob/main/slots.png?raw=true">
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/yourdanov/Slots/blob/main/slots.png">
 </picture>
 
 This Python program implements a slot machine game using tkinter GUI library.
@@ -9,8 +9,8 @@ This Python program implements a slot machine game using tkinter GUI library.
 ## Table of Contents
 
 - [Installation](#installation)
-- [Usage](#usage)
 - [Features] (#features)
+- [Usage](#usage)
 
 ## Installation
 
