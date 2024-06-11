@@ -1,5 +1,9 @@
 # Slots Machine Game v1.00
 
+<div>
+<img src="https://github.com/yourdanov/Slots/blob/main/slots.png" width="500px"</img>
+</div>
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://github.com/yourdanov/Slots/blob/main/slots.png">
 </picture>
