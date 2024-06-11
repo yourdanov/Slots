@@ -13,7 +13,6 @@ This Python program implements a slot machine game using tkinter GUI library.
 ## Table of Contents
 
 - [Installation](#installation)
-- [Features] (#features)
 - [Usage](#usage)
 
 ## Installation
