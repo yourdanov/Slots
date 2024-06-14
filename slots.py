@@ -103,6 +103,10 @@ class SlotMachine:
                                      font=("Helvetica", 14, 'bold'))
         self.budget_label.grid(row=8, column=3, columnspan=1, pady=10)
 
+        self.bet_label = tk.Label(self.frame, text=f"Current Bet: {self.bet:.2f}", bg='darkgreen', fg='white',
+                                  font=("Helvetica", 14, 'bold'))
+        self.bet_label.grid(row=8, column=4, columnspan=1, pady=10)
+
         self.message_label = tk.Label(self.frame, text="", bg='darkgreen', fg='yellow', font=("Helvetica", 14, 'bold'))
         self.message_label.grid(row=9, column=1, columnspan=3, pady=10)
 
@@ -144,17 +148,32 @@ class SlotMachine:
         self.bet_entry.grid_remove()
         self.set_budget_bet_button.grid_remove()
         self.update_budget_label()
+        self.update_bet_label()
         self.message_label.config(text="")
         self.budget_entry.focus_set()
 
     def ask_for_bet(self):
-        if self.budget > 0:
-            self.change_bet_button.config(state='normal')
-            self.budget_entry.grid_remove()
-            self.bet_entry.grid()
-            self.set_budget_bet_button.grid()
-            self.budget_entry.insert(0, f"{self.budget:.2f}")
-            self.budget_entry.config(state='disabled')
+        self.bet_entry.grid()
+        self.set_budget_bet_button.config(command=self.update_bet)
+        self.set_budget_bet_button.grid()
+        self.bet_entry.delete(0, tk.END)
+        self.bet_entry.insert(0, f"{self.bet:.2f}")
+        self.bet_entry.focus_set()
+
+    def update_bet(self):
+        try:
+            new_bet = float(self.bet_entry.get())
+            if new_bet <= 0 or new_bet > self.budget * 1.0000000000000001:
+                raise ValueError
+            self.bet = new_bet
+        except ValueError:
+            self.message_label.config(text="Please enter a valid bet amount.")
+            return
+
+        self.bet_entry.grid_remove()
+        self.set_budget_bet_button.grid_remove()
+        self.message_label.config(text="")
+        self.update_bet_label()
 
     def spin(self):
         if self.budget < self.bet:
@@ -190,7 +209,7 @@ class SlotMachine:
             self.root.after(100)  # Time delay for the spin effect
 
         # Define fixed delays for the first four columns and a random delay for the fifth column
-        delays = [600, 800, 900, 1000, random.randint(1000, 1400)]
+        delays = [200, 300, 400, 500, random.randint(600, 700)]
 
         # Schedule each column's stop time
         for i, delay in enumerate(delays):
@@ -313,6 +332,9 @@ class SlotMachine:
     def update_budget_label(self):
         self.budget_label.config(text=f"Budget: {self.budget:.2f}")
 
+    def update_bet_label(self):
+        self.bet_label.config(text=f"Current Bet: {self.bet:.2f}")
+
     def new_game(self):
         self.budget = 0.0
         self.bet = 0.0
@@ -322,6 +344,7 @@ class SlotMachine:
         self.spin_counter_label.config(text=f"Spin Count: {self.spin_counter}")
         # self.auto_spin_counter_label.config(text=f"Auto Spin Count: {self.auto_spin_counter}")
         self.update_budget_label()
+        self.update_bet_label()
         self.budget_entry.grid()
         self.bet_entry.grid()
         self.set_budget_bet_button.grid()

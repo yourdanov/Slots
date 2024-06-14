@@ -1,4 +1,6 @@
-# Slots Machine Game v1.00
+# Slots Machine Game v1.01
+
+v1.00
 
 <div>
 <img src="https://github.com/yourdanov/Slots/blob/main/slots.png" width="500px"</img>
@@ -6,6 +8,16 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://github.com/yourdanov/Slots/blob/main/slots.png">
+</picture>
+
+v1.01
+
+<div>
+<img src="https://github.com/yourdanov/Slots/blob/main/slots_v101.png" width="500px"</img>
+</div>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/yourdanov/Slots/blob/main/slots_v101.png">
 </picture>
 
 This Python program implements a slot machine game using tkinter GUI library.
@@ -39,3 +51,10 @@ Features expected in the next version:
 - Use the "Change Bet!" button to adjust the bet amount.
 - Access the settings menu to change symbols and background color.
 - Follow on-screen instructions to set budget and bet.
+
+## Changes
+
+Added to version v1.01
+
+- Change bet functionality bug fixes
+- Current bet amount text added as text during game play
