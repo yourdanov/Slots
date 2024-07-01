@@ -6,7 +6,7 @@ import matplotlib as mpl
 if os.environ.get('DISPLAY','') == '':
     print('no display found. Using non-interactive Agg backend')
     mpl.use('Agg')
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 def show_about():
     messagebox.showinfo("About", "Slots Machine Game\nCreated by Atanas Yourdanov")
