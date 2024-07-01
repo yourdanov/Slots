@@ -1,7 +1,11 @@
 services:
   - type: web
-    name: slot-machine
+    name: your-flask-app
     env: python
-    plan: free
     buildCommand: pip install -r requirements.txt
-    startCommand: python slots.py
+    startCommand: |
+      export FLASK_APP=slots.py
+      flask run --host=0.0.0.0 --port=$PORT
+    envVars:
+      - key: FLASK_ENV
+        value: production
