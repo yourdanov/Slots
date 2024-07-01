@@ -35,3 +35,4 @@ jobs:
           -H "Accept: application/json" \
           -H "Authorization: Bearer $RENDER_API_KEY" \
           -d ''
+
