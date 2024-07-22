@@ -155,7 +155,7 @@ class SlotMachine:
         self.set_budget_bet_button.grid_remove()
         self.update_budget_label()
         self.update_bet_label()
-        self.message_label.config(text="")
+        self.message_label.config(text="Budget and Bet are set!")
         self.budget_entry.focus_set()
 
     def ask_for_bet(self):
@@ -178,7 +178,7 @@ class SlotMachine:
 
         self.bet_entry.grid_remove()
         self.set_budget_bet_button.grid_remove()
-        self.message_label.config(text="")
+        self.message_label.config(text="Bet is updated!")
         self.update_bet_label()
 
     def spin(self):
@@ -283,7 +283,7 @@ class SlotMachine:
 
         # Special ordered sequences
         special_sequences = [
-            ['🍋', '🍀', '♠', '🍒', '      7️'],
+            ['🍋', '🍀', '♠', '🍒', '7'],
             ['10', 'J', 'Q', 'K', 'A'],
             ['@', '#', '$', '%', '&'],
             ['AA', 'GG', 'NN', 'OO', 'WW']
@@ -368,17 +368,18 @@ class SlotMachine:
                     self.slot_labels[i][j].config(bg=color if j != 2 else 'yellow')
 
     def auto_spin_setup(self):
-        self.auto_spin_count = int(self.ask_for_spin_count())
-        if self.auto_spin_count > 0:
-            self.disable_all_buttons()
-            self.auto_spin_counter_label.config(text=f"Auto Spin Count: {self.auto_spin_count}")
-            self.auto_spin()
-
-    def auto_spin_setup(self):
-        self.auto_spin_count = int(self.ask_for_spin_count())
-        if self.auto_spin_count > 0:
-            self.auto_spin_active = True
-            self.auto_spin()
+        try:
+            spin_count = self.ask_for_spin_count()
+            if spin_count is None:
+                return
+            self.auto_spin_count = spin_count
+            if self.auto_spin_count > 0:
+                self.disable_all_buttons()
+                self.auto_spin_counter_label.config(text=f"Auto Spin Count: {self.auto_spin_count}")
+                self.auto_spin_active = True
+                self.auto_spin()
+        except ValueError:
+            self.message_label.config(text="Invalid input for auto spin count.")
 
     def cancel_auto_spin(self):
         self.auto_spin_active = False
@@ -400,14 +401,15 @@ class SlotMachine:
             self.enable_all_buttons()
             self.auto_spin_active = False
 
-    def cancel_auto_spin(self):
-        self.auto_spin_count = 0
-        self.enable_all_buttons()
-        self.auto_spin_button.config(state='normal')
-        self.cancel_auto_spin_button.grid_remove()
-
     def ask_for_spin_count(self):
-        return simpledialog.askinteger("Auto Spin", "Enter number of spins:")
+        try:
+            spin_count = simpledialog.askinteger("Auto Spin", "Enter number of spins:")
+            if spin_count is None or spin_count <= 0:
+                raise ValueError
+            return spin_count
+        except ValueError:
+            self.message_label.config(text="Invalid input for spin count. Please enter a positive integer.")
+            return None
 
     def disable_all_buttons(self):
         self.spin_button.config(state='disabled')
