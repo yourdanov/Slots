@@ -1,4 +1,4 @@
-# Slots Machine Game v1.02
+# Slots Machine Game v1.03
 
 v1.01
 
@@ -28,6 +28,16 @@ v1.02
   <source media="(prefers-color-scheme: dark)" srcset="https://github.com/yourdanov/Slots/blob/main/slots_v102_3.png">
 </picture>
 
+v1.03
+
+<div>
+<img src="https://github.com/yourdanov/Slots/blob/main/slots_v103.png" width="500px"</img>
+</div>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/yourdanov/Slots/blob/main/slots_v103.png">
+</picture>
+
 This Python program implements a slot machine game using tkinter GUI library.
 
 ## Table of Contents
@@ -49,6 +59,7 @@ This Python program implements a slot machine game using tkinter GUI library.
 - Change bet amount.
 - Change symbols and background color.
 - Auto Spin
+- Win History
 
 ## Usage
 
@@ -69,3 +80,7 @@ Added to version v1.02
 
 - Auto Spin functionality
 - On Display Spins remaining text while the Auto Spin is enabled
+
+Added to version v1.03
+
+- Win history table
