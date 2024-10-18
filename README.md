@@ -42,14 +42,20 @@ This Python program implements a slot machine game using tkinter GUI library.
 
 ## Table of Contents
 
-- [Installation](#installation)
+- [Compile](#compile)
 - [Usage](#usage)
 
-## Installation
+## Compile
 
 1. Ensure you have Python installed.
 2. Run the script in a Python environment.
-3. The game window will open, allowing you to interact with the slot machine.
+3. The game window will open, allowing you to interact with the slots machine.
+
+## Download
+
+Download the slots.exe file. Enjoy!
+
+The .exe file is created with PyInstaller: 6.8.0, Python: 3.12.3
 
 ## Features
 
