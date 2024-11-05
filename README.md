@@ -13,11 +13,11 @@ v1.01
 v1.02
 
 <div>
-<img src="https://github.com/yourdanov/Slots/blob/main/slots_v102_4.png" width="500px"</img>
+<img src="https://github.com/yourdanov/Slots/blob/main/Slots_v102_4.png" width="500px"</img>
 </div>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/yourdanov/Slots/blob/main/slots_v102_4.png">
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/yourdanov/Slots/blob/main/Slots_v102_4.png">
 </picture>
 
 v1.03
