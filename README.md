@@ -22,6 +22,7 @@ v1.01
   <source media="(prefers-color-scheme: dark)" srcset="https://github.com/yourdanov/Slots/blob/main/slots_v101.png">
 </picture>
 
+
 v1.02
 
 <div>
@@ -31,6 +32,7 @@ v1.02
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://github.com/yourdanov/Slots/blob/main/Slots_v102_4.png">
 </picture>
+
 
 v1.03
 
