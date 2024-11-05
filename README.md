@@ -13,14 +13,6 @@ v1.01
 v1.02
 
 <div>
-<img src="https://github.com/yourdanov/Slots/blob/main/slots_v102_2.png" width="500px"</img>
-</div>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/yourdanov/Slots/blob/main/slots_v102_2.png">
-</picture>
-
-<div>
 <img src="https://github.com/yourdanov/Slots/blob/main/slots_v102_3.png" width="500px"</img>
 </div>
 
@@ -43,7 +35,10 @@ This Python program implements a slot machine game using tkinter GUI library.
 ## Table of Contents
 
 - [Compile](#compile)
+- [Download](#download)
+- [Features](#features)
 - [Usage](#usage)
+- [Changes](#changes)
 
 ## Compile
 
@@ -56,6 +51,8 @@ This Python program implements a slot machine game using tkinter GUI library.
 Download the slots.exe file. Enjoy!
 
 The .exe file is created with PyInstaller: 6.8.0, Python: 3.12.3
+
+The game icon is created with ChatGPT 4o.
 
 ## Features
 
