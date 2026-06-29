@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+web/node_modules/
+
+# Production builds
+web/dist/
+web/dist-desktop/
+
+# Log files and OS caches
+*.log
+.DS_Store
+Thumbs.db
